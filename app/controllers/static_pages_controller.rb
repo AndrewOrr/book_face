@@ -5,6 +5,7 @@ class StaticPagesController < ApplicationController
   def help
   end
 
+<<<<<<< HEAD
   #Other pages we will need are
   # Profile
   # Profile Preferences
@@ -14,4 +15,13 @@ class StaticPagesController < ApplicationController
   # Login
   # News feed.
   # Not all of these pages will be static however.
+=======
+  #Pages we still need to make
+  #Profile
+  #Profile Preferences
+  #Login
+  #News Feed
+  #Books (If we get there)
+  #Search
+>>>>>>> JESSEaddingControllerComments
 end
