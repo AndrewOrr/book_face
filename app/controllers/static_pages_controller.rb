@@ -10,7 +10,6 @@ class StaticPagesController < ApplicationController
   # Profile
   # Profile Preferences
   # Friends 
-  # Wall
   # Books (If we end up getting that far.)
   # Login
   # News feed.
