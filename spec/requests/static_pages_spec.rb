@@ -2,14 +2,14 @@ require 'spec_helper'
 
 describe "Static pages" do
 
+  subject { page }
+
   describe "Home page" do
 
-    it "should have the content 'Home'" do
-      visit '/static_pages/home'
-      expect(page).to have_content('home')
-    end
+    before { visit '/static_pages/home'}
+    it { should have_content('Home') }
+    it { should have_link('Help', href: '/static_pages/Help')}
 end
-=begin
 
   describe "Help page" do
 
@@ -28,10 +28,13 @@ end
   end
 
  describe "profile page" do
+
     it "should have the content 'Me'" do
       visit '/static_pages/profile'
       expect(page).to have_content('profile')
     end
+
+
   end
 
  describe "wall page" do
@@ -41,6 +44,6 @@ end
       expect(page).to have_content('wall')
     end
   end
-=end
+
 
 end
