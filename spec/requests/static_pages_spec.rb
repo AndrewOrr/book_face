@@ -4,57 +4,44 @@ describe "Static pages" do
 
   subject { page }
 
-   describe "Home page" do
+  describe "Home page" do
+    before { visit root_path }
 
-    it "should have the content 'Sample App'" do
-      visit '/static_pages/home'
-      expect(page).to have_content('Sample App')
-    end
-
-    it "should have the base title" do
-      visit '/static_pages/home'
-      expect(page).to have_title("Ruby on Rails Tutorial Sample App")
-    end
-
-    it "should not have a custom page title" do
-      visit '/static_pages/home'
-      expect(page).not_to have_title('| Home')
-    end
+    it { should have_content('Book Face') }
+    it { should have_title(full_title('')) }
+    it { should_not have_title('| Home') }
   end
 
   describe "Help page" do
+    before { visit help_path }
 
-    it "should have the content 'Help'" do
-      visit '/static_pages/help'
-      expect(page).to have_content('Help')
-    end
+    it { should have_content('Help') }
+    it { should have_title(full_title('Help')) }
   end
 
-  describe "news_feed page" do
+  describe "profile page" do
+    before { visit profile_path }
 
-    it "should have the content 'News'" do
-      visit '/static_pages/news_feed'
-      expect(page).to have_content('News')
-    end
+    it { should have_content('profile') }
+    it { should have_title(full_title('profile')) }
   end
 
- describe "profile page" do
+  describe "wall" do
+    before { visit wall_path }
 
-    it "should have the content 'Me'" do
-      visit '/static_pages/profile'
-      expect(page).to have_content('profile')
-    end
-
-
+    it { should have_content('Wall') }
+    it { should have_title(full_title('Wall')) }
   end
+    describe "login" do
+    before { visit login_path }
 
- describe "wall page" do
-
-    it "should have the content 'wall'" do
-      visit '/static_pages/wall'
-      expect(page).to have_content('wall')
-    end
+    it { should have_content('login') }
+    it { should have_title(full_title('login')) }
   end
+    describe "news_feed" do
+    before { visit news_feed_path }
 
-
+    it { should have_content('news_feed') }
+    it { should have_title(full_title('news_feed')) }
+  end
 end

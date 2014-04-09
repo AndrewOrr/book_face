@@ -1,10 +1,10 @@
 FaceBook::Application.routes.draw do
-  get "static_pages/home"
-  get "static_pages/profile"
-  get "static_pages/wall"
-  get "static_pages/log_in"
-  get "static_pages/help"
-  get "static_pages/news_feed"
+  root  'static_pages#home'
+  match '/help',    to: 'static_pages#help',    via: 'get'
+  match '/profile',   to: 'static_pages#profile',   via: 'get'
+  match '/wall', to: 'static_pages#wall', via: 'get'
+  match '/login',    to: 'static_pages#login',    via: 'get'
+  match '/news_feed',   to: 'static_pages#news_feed',   via: 'get'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
