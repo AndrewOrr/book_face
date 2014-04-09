@@ -8,6 +8,7 @@ describe "Static pages" do
 
     before { visit '/static_pages/home'}
     it { should have_content('Home') }
+    it { should have_link('Help', href: '/static_pages/Help')}
 end
 
   describe "Help page" do
