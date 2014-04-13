@@ -9,6 +9,7 @@ $wood: #966f33;
 $camelBrown: #c19a6b;
 $fernGreen: #667c26;
 $grayGoose: #d1d0ce;
+$venomGreen: #728C00;
 
 $bgDefault      : #2ecc71;
 $bgHighlight    : #27ae60;
@@ -65,7 +66,7 @@ textarea {
   background-color: $fernGreen;
   background-image: none;
   &:hover{
-    background-color: $green;
+    background-color: $venomGreen;
   } 
 } 
 
