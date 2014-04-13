@@ -18,7 +18,7 @@ describe "User pages" do
     it { should have_content('Sign up') }
     it { should have_title(full_title('Sign up')) }
   end
-describe "signup" do
+ describe "signup" do
 
     before { visit signup_path }
 
