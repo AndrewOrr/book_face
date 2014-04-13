@@ -1,4 +1,5 @@
 @import "bootstrap";
+@import 'bootstrap-responsive';
 
 /* mixins, variables, etc. */
 
@@ -18,6 +19,7 @@ $colHover       : #d1ffed;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+
 }
 /* universal */
 
@@ -45,6 +47,8 @@ textarea {
   }
 }
 
+/*bootstrap*/
+
 .hero-unit {
   background-color: $camelBrown;
 }
@@ -56,6 +60,15 @@ textarea {
 .navbar-inner{
   background-color: green;
 }
+
+.btn-primary { 
+  background-color: $fernGreen;
+  background-image: none;
+  &:hover{
+    background-color: $green;
+  } 
+} 
+
 
 /* typography */
 
