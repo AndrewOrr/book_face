@@ -1,11 +1,11 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="navbar-inner">
     <div class="container">
-      <%= link_to "Book Face", root_path, id: "logo" %>
+      <%= link_to "BookFace", root_path, id: "logo" %>
       <nav>
-        <table class="nav pull-right">
-        </table>
-
+        <ul class="nav pull-right">
+          <li><%= link_to "Log In", login_path, id: "header_login" %></li>
+        </ul>
       </nav>
 
     </div>

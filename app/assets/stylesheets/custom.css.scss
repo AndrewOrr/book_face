@@ -3,6 +3,16 @@
 /* mixins, variables, etc. */
 
 $grayMediumLight: #eaeaea;
+$oakBrown: #806517;
+$wood: #966f33;
+$camelBrown: #c19a6b;
+$fernGreen: #667c26;
+$grayGoose: #d1d0ce;
+
+$bgDefault      : #2ecc71;
+$bgHighlight    : #27ae60;
+$colDefault     : #ecf0f1;
+$colHover       : #d1ffed; 
 
 @mixin box_sizing {
   -moz-box-sizing: border-box;
@@ -16,7 +26,8 @@ html {
 }
 
 body {
-  padding-top: 60px;
+  padding-top: 80px;
+  background-color: $wood;
 }
 
 section {
@@ -34,9 +45,21 @@ textarea {
   }
 }
 
+.hero-unit {
+  background-color: $camelBrown;
+}
+
+.container{
+  background-color: transparent;
+}
+
+.navbar-inner{
+  background-color: green;
+}
+
 /* typography */
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, p {
   line-height: 1;
   font-family:  "Book Antiqua", Palatino, serif;
 }
@@ -54,29 +77,31 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: $grayLight;
+  color: $grayGoose;
 }
 
 p {
   font-size: 1.1em;
   line-height: 1.7em;
+  color: $camelBrown;
 }
 
 
 /* header */
 
 #logo {
+  font-family:  "Book Antiqua", Palatino, serif;
   float: left;
   margin-right: 10px;
-  font-size: 1.7em;
-  color: green;
-  text-transform: uppercase;
+  font-size: 2.7em;
+  color: $grayGoose;
   letter-spacing: -1px;
-  padding-top: 9px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   font-weight: bold;
   line-height: 1;
   &:hover {
-    color: green;
+    color: white;
     text-decoration: none;
   }
 }
@@ -84,12 +109,13 @@ p {
 /* footer */
 
 footer {
+  font-family:  "Book Antiqua", Palatino, serif;
   margin-top: 45px;
   padding-top: 5px;
-  border-top: 1px solid $grayMediumLight;
-  color: $grayLight;
+  border-top: 1px solid $oakBrown;
+  color: $grayGoose;
   a {
-    color: $gray;
+    color: $grayGoose;
     &:hover {
       color: $grayDarker;
     }
@@ -121,7 +147,7 @@ footer {
 aside {
   section {
     padding: 10px 0;
-    border-top: 1px solid $grayLighter;
+    border-top: 1px solid $camelBrown;
     &:first-child {
       border: 0;
       padding-top: 0;
@@ -148,7 +174,7 @@ aside {
 /* forms */
 
 input, textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
+  border: 1px solid $camelBrown;
   width: 100%;
   margin-bottom: 15px;
   @include box_sizing;
