@@ -22,8 +22,8 @@ describe "User pages" do
   describe "login" do
     before { visit login_path }
 
-    it { should have_content('Log In') }
-    it { should have_title(full_title('Log In')) }
+    it { should have_content('Sign In') }
+    it { should have_title(full_title('Sign In')) }
   end
 
 describe "signup" do
