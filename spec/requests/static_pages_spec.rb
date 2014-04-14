@@ -7,12 +7,11 @@ describe "Static pages" do
   describe "Home page" do
     before { visit root_path }
 
-    # it { should have_title(full_title('')) }
-    it { should have_title('BookFace') }
+    it { should have_title(full_title()) }
     it { should_not have_title('| Home') }
     it { should have_content('BookFace') }
-    it { should have_link('Sign Up Now!', href: signup_path) }
-    it { should have_link('Log In', href: login_path)}
+    it { should have_link('Sign up now!', href: signup_path) }
+    it { should have_link('Log In', href: login_path) }
   end
 
 =begin
