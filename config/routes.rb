@@ -1,7 +1,10 @@
 FaceBook::Application.routes.draw do
   resources :users
+  resources :sessions, only: [:new, :create, :destroy]
   root  'static_pages#home'
-   match '/signup',  to: 'users#new',            via: 'get'
+  match '/signup',  to: 'users#new',            via: 'get'
+  match '/signin',  to: 'sessions#new',         via: 'get'
+  match '/signout', to: 'sessions#destroy',     via: 'delete'
   match '/help',    to: 'static_pages#help',    via: 'get'
   match '/profile',   to: 'static_pages#profile',   via: 'get'
   match '/wall', to: 'static_pages#wall', via: 'get'
