@@ -11,17 +11,15 @@ $fernGreen: #667c26;
 $grayGoose: #d1d0ce;
 $venomGreen: #728C00;
 
-$bgDefault      : #2ecc71;
-$bgHighlight    : #27ae60;
-$colDefault     : #ecf0f1;
-$colHover       : #d1ffed; 
-
 @mixin box_sizing {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 
 }
+
+
+
 /* universal */
 
 html {
@@ -48,6 +46,9 @@ textarea {
   }
 }
 
+
+
+
 /*bootstrap*/
 
 .hero-unit {
@@ -69,6 +70,8 @@ textarea {
     background-color: $venomGreen;
   } 
 } 
+
+
 
 
 /* typography */
@@ -101,6 +104,8 @@ p {
 }
 
 
+
+
 /* header */
 
 #logo {
@@ -119,6 +124,9 @@ p {
     text-decoration: none;
   }
 }
+
+
+
 
 /* footer */
 
@@ -147,6 +155,9 @@ footer {
   }
 }
 
+
+
+
 /* miscellaneous */
 
 .debug_dump {
@@ -156,6 +167,10 @@ footer {
   margin-top: 45px;
   @include box_sizing;
 }
+
+
+
+
 /* sidebar */
 
 aside {
@@ -185,6 +200,11 @@ aside {
   float: left;
   margin-right: 10px;
 }
+
+
+
+
+
 /* forms */
 
 input, textarea, select, .uneditable-input {
