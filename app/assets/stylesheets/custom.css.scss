@@ -47,6 +47,19 @@ textarea {
 }
 
 
+/* fonts */
+
+@font-face {
+    font-family: 'camelot_initialsnormal';
+    src: url('camelot-webfont.eot');
+    src: url('camelot-webfont.eot?#iefix') format('embedded-opentype'),
+         url('camelot-webfont.woff') format('woff'),
+         url('camelot-webfont.ttf') format('truetype'),
+         url('camelot-webfont.svg#camelot_initialsnormal') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
 
 
 /*bootstrap*/
