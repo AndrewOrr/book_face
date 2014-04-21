@@ -18,7 +18,7 @@ describe "Authentication" do
       end
     end
    describe "with valid information" do
-      let(:user) { FactoryGirl.create(:user) }
+      let(:user) { FactoryGirl.create(:user) }  #Use FactoryGirl to fill in info for us
       before do
         fill_in "Email",    with: user.email.upcase
         fill_in "Password", with: user.password

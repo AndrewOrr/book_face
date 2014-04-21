@@ -24,14 +24,16 @@ describe User do
     before { @user.email = " " }
     it { should_not be_valid }
   end
+
    describe "when name is too long" do
     before { @user.name = "a" * 51 }
     it { should_not be_valid }
   end
+
   describe "when email format is invalid" do
     it "should be invalid" do
       addresses = %w[user@foo,com user_at_foo.org example.user@foo.
-                     foo@bar_baz.com foo@bar+baz.com]
+                     foo@bar_baz.com foo@bar+baz.com @foo.gov]
       addresses.each do |invalid_address|
         @user.email = invalid_address
         expect(@user).not_to be_valid
@@ -48,6 +50,7 @@ describe User do
       end
     end
   end
+
   describe "when email address is already taken" do
     before do
       user_with_same_email = @user.dup
@@ -57,6 +60,7 @@ describe User do
 
     it { should_not be_valid }
   end
+
  describe "when password is not present" do
     before do
       @user = User.new(name: "Example User", email: "user@example.com",
@@ -69,6 +73,7 @@ describe User do
     before { @user.password_confirmation = "mismatch" }
     it { should_not be_valid }
   end
+
   describe "with a password that's too short" do
     before { @user.password = @user.password_confirmation = "a" * 5 }
     it { should be_invalid }
@@ -89,6 +94,7 @@ describe User do
       specify { expect(user_for_invalid_password).to be_false }
     end
   end
+
   describe "remember token" do
     before { @user.save }
     its(:remember_token) { should_not be_blank }
