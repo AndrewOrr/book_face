@@ -26,12 +26,14 @@ $colHighlight   : white;
 .navbar-default {
   background-color: $bgDefault;
   border-color: $bgHighlight;
+  font-family:  "Book Antiqua", Palatino, serif;
   .navbar-brand {
     color: $colDefault;
     &:hover, &:focus { 
       color: $colHighlight; }}
   .navbar-text {
-    color: $colDefault; }
+    color: $colDefault;
+     }
   .navbar-nav {
     > li {
       > a {
