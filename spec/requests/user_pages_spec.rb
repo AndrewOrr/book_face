@@ -63,7 +63,7 @@ describe "edit" do
       it { should have_link('change', href: 'http://gravatar.com/emails') }
     end
 
-describe "with valid information" do
+ describe "with valid information" do
       let(:new_name)  { "New Name" }
       let(:new_email) { "new@example.com" }
       before do
