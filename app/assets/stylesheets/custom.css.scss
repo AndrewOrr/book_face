@@ -27,6 +27,8 @@ $colHighlight   : white;
   background-color: $bgDefault;
   border-color: $bgHighlight;
   font-family:  "Book Antiqua", Palatino, serif;
+  font-size: 1.5em;
+
   .navbar-brand {
     color: $colDefault;
     &:hover, &:focus { 
@@ -66,18 +68,13 @@ $colHighlight   : white;
     > li > a {
       color: $colDefault;
       &:hover, &:focus {
-        color: $colHighlight; }}
+        color: $colHighlight; }
+        }
     > .active {
       > a, > a:hover, > a:focus, {
         color: $colHighlight;
         background-color: $bgHighlight; }}}
 }
-
-
-
-
-
-
 
 /* universal */
 
@@ -105,11 +102,15 @@ textarea {
   }
 }
 
+.hero-unit {
+  padding: 10px 50px 20px 50px;
+}
+
 
 /* fonts */
 
 @font-face {
-    font-family: 'camelot_initialsnormal';
+    font-family: 'camelot';
     src: url('camelot-webfont.eot');
     src: url('camelot-webfont.eot?#iefix') format('embedded-opentype'),
          url('camelot-webfont.woff') format('woff'),
@@ -150,29 +151,39 @@ textarea {
 
 h1, h2, h3, h4, h5, h6, p {
   line-height: 1;
-  font-family:  "Book Antiqua", Palatino, serif;
+  font-family:  "Book Antiqua", Palatino, serif; 
 }
 
 h1 {
   font-size: 3em;
   letter-spacing: -2px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   text-align: center;
 }
 
 h2 {
   font-size: 1.2em;
   letter-spacing: -1px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   text-align: center;
   font-weight: normal;
   color: $grayGoose;
+  &:first-letter {
+    font-family: "camelot";
+    font-size: 2em;
+    padding-right: 7px;
+  }
+
 }
 
 p {
   font-size: 1.1em;
   line-height: 1.7em;
   color: $camelBrown;
+  &:first-letter {
+    font-family: "camelot";
+    font-size: 2em;
+  }
 }
 
 
@@ -187,8 +198,6 @@ p {
   font-size: 2.7em;
   color: $grayGoose;
   letter-spacing: -1px;
-  padding-top: 15px;
-  padding-bottom: 15px;
   font-weight: bold;
   line-height: 1;
   &:hover {
@@ -204,7 +213,7 @@ p {
 
 footer {
   font-family:  "Book Antiqua", Palatino, serif;
-  margin-top: 45px;
+  margin-top: 20px;
   padding-top: 5px;
   border-top: 1px solid $fernGreen;
   color: $grayGoose;
