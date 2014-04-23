@@ -4,6 +4,30 @@ describe "User pages" do
 
   subject { page }
 
+  describe "index" do
+    let(:user) { FactoryGirl.create(:user) }
+    before(:each) do
+      sign_in user
+      visit users_path
+    end
+
+    it { should have_title('All users') }
+    it { should have_content('All users') }
+
+    describe "pagination" do
+
+      before(:all) { 30.times { FactoryGirl.create(:user) } }
+      after(:all)  { User.delete_all }
+
+      it { should have_selector('div.pagination') }
+
+      it "should list each user" do
+        User.paginate(page: 1).each do |user|
+          expect(page).to have_selector('li', text: user.name)
+        end
+      end
+    end
+  end
   describe "profile page" do
     let(:user) { FactoryGirl.create(:user) }
     before { visit user_path(user) }
@@ -81,4 +105,34 @@ describe "edit" do
       specify { expect(user.reload.email).to eq new_email }
     end
   end
+
+  describe "home" do 
+    let(:user) { FactoryGirl.create(:user) }
+    before do
+      sign_in user
+      visit user_path(user)
+    end
+    describe "buttons" do
+      it { should have_button('Post')}
+      it { should have_link('Friends', href: friends_path) }
+      it { should have_link('News Feed', href: news_path) }
+      it { should have_link('Find Friends', href: friends_path) }
+      it { should have_link('Messages', href: messages_path) }
+      it { should have_link('Edit', href: edit_user_path(user)) }
+    end  
+  end
 end
+=begin
+    describe "post" do
+      post = Post.new
+      post.status = "Nom nom nom"
+      post.status.should == "Nom nom nom"
+    end
+
+   describe "public_post" do
+      post = Post.new(status: 'Nom nom nom')
+      post.should be_public
+    end
+  end
+end
+=end
