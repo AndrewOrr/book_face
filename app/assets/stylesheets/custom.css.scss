@@ -102,8 +102,13 @@ textarea {
   }
 }
 
-.hero-unit {
-  padding: 10px 50px 20px 50px;
+.hero-unit{
+  margin-bottom: 30px;
+  padding: 10px 20px 20px 20px;
+  .hero-main{
+    padding: 10px 20px 20px 20px;
+    margin-bottom: 30px;
+    }
 }
 
 

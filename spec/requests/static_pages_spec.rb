@@ -13,7 +13,7 @@ describe "Static pages" do
     it { should_not have_title('| Home') }
     it { should have_content('BookFace') }
     it { should have_link('Sign up now!', href: signup_path) }
-    it { should have_link('Log In', href: login_path) }
+    it { should have_link('Sign In', href: login_path) }
   end
 
 end
