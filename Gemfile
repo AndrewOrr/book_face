@@ -13,8 +13,6 @@ gem 'bootstrap-will_paginate', '0.0.9'
 group :development, :test do
   gem 'sqlite3', '1.3.8'      #This database sometimes has problems with some stuff.
   gem 'rspec-rails', '2.13.1'
-  gem 'pg', '0.15.1'
-  gem 'rails_12factor', '0.0.2'
   # The following optional lines are part of the advanced setup.
   # gem 'guard-rspec', '2.5.0'
   # gem 'spork-rails', '4.0.0'
