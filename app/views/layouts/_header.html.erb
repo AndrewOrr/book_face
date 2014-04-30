@@ -5,11 +5,15 @@
       <li class = "logo"><a href= <%=root_path%> > BookFace </a></li>
       </ul>
       <ul class="nav navbar-nav pull-right">
-      <li><a href= <%=signin_path%> >Sign In</a></li>
+      <% if signed_in? %>
+        <li><a href= <%current_user%> > <%=current_user.name%> </a></li>
+      <%else%>
+        <li><a href= <%=signin_path%> >Sign In</a></li>
+      <%end%>
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">More<b class="caret"></b></a>
         <ul class="dropdown-menu">
-          <li><a href=<%signout_path%>>Sign Out</a></li>
+          <li><%= link_to "Sign Out", signout_path, method: "delete" %>
           <li><a href=<%help_path%>>Help</a></li>
           <li class="divider"></li>
           <li>
