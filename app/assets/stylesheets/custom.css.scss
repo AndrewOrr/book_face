@@ -254,6 +254,12 @@ footer {
   @include box_sizing;
 }
 
+.rounded_corners{
+    -webkit-border-radius:15px;
+    -moz-border-radius:15px;
+    border-radius:15px;
+}
+
 
 
 

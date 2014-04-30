@@ -1,8 +1,8 @@
 <div class="center hero-unit hero-main"> 
   <h1>Welcome to BookFace!</h1>
-
-  <%= image_tag("BookFace1.jpg", alt:"BookFace", height: 400, width: 400) %>
-
+  <div class="rounded-corners">
+  	<%= image_tag("BookFace1.jpg", alt:"BookFace", height: 400, width: 400, radius: 20) %>
+  </div>
   <h2>
     Bookface is the premier social networking site for book characters from all 
     corners of Apocrypha. Come wizards, come warriors, come detectives, come witches.
@@ -10,5 +10,5 @@
     have fine tales to spin.
   </h2>
 
-   <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
+   <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary"%>
 </div>
