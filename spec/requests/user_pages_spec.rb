@@ -65,7 +65,7 @@ describe "User pages" do
   end
   
   describe "login" do
-    before { visit login_path }
+    before { visit signin_path }
 
     it { should have_content('Sign In') }
     it { should have_title(full_title('Sign In')) }
@@ -104,7 +104,7 @@ describe "edit" do
 
     describe "page" do
       it { should have_content("Update your profile") }
-      it { should have_title("Edit user") }
+      it { should have_title("Edit User") }
       it { should have_link('change', href: 'http://gravatar.com/emails') }
     end
 
@@ -139,7 +139,7 @@ describe "edit" do
       it { should have_link('News Feed', href: news_path) }
       it { should have_link('Find Friends', href: friends_path) }
       it { should have_link('Messages', href: messages_path) }
-      it { should have_link('Edit', href: edit_user_path(user)) }
+      it { should have_link('Settings', href: edit_user_path(user)) }
     end  
   end
 end
