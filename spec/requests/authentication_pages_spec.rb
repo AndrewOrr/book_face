@@ -22,7 +22,7 @@ describe "Authentication" do
 
         describe "visiting the user index" do
           before { visit users_path }
-          it { should have_title('Sign in') }
+          it { should have_title('Sign In') }
         end
       end
 
@@ -66,6 +66,7 @@ describe "Authentication" do
       describe "with invalid information" do
         it { should have_title('Sign in') }
         it { should have_selector('div.alert.alert-error') }
+      end
 
       describe "after visiting another page" do
         before { click_link "Home" }
@@ -78,7 +79,7 @@ describe "Authentication" do
 
       it { should have_title(user.name) }
       it { should have_link('Users',       href: users_path) }
-      it { should have_link('Profile',     href: user_path(user)) }
+      it { should have_link(user.name,     href: user_path(user)) }
       it { should have_link('Settings',    href: edit_user_path(user)) }
       it { should have_link('Sign Out',    href: signout_path) }
       it { should_not have_link('Sign In', href: signin_path) }
@@ -88,5 +89,4 @@ describe "Authentication" do
       it { should have_link('Sign In') }
     end
   end
-end
 end
