@@ -64,7 +64,7 @@ describe User do
     it { should_not be_valid }
   end
 
-   describe "when name is too long" do
+  describe "when name is too long" do
     before { @user.name = "a" * 51 }
     it { should_not be_valid }
   end
@@ -168,7 +168,5 @@ describe User do
 
       it { should_not be_friend(other_user) }
       its(:friend_users) { should_not include(other_user) }
-    end
   end
-end
 end
