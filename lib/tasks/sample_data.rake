@@ -10,7 +10,11 @@ def make_users
   admin = User.create!(name: "Example User",
                        email: "example@railstutorial.org",
                        password: "foobar",
-                       password_confirmation: "foobar")
+                       password_confirmation: "foobar",
+                       interests: "being an example",
+                       quotes: "'I am an example' - me",
+                       gender: "male",
+                       hometown: "exampleton" )
   admin.toggle!(:admin)
   99.times do |n|
     name = Faker::Name.name
@@ -27,4 +31,13 @@ def make_microposts
     content = Faker::Lorem.sentence(5)
     users.each { |user| user.microposts.create!(content: content) }
   end
+end
+
+def make_relationships
+  users = User.all
+  user  = users.first
+  friended_users = users[2..50]
+  friends      = users[3..40]
+  friended_users.each { |friended| user.friend!(friended) }
+  friends.each      { |friend| friend.friend!(user) }
 end

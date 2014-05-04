@@ -1,12 +1,23 @@
 <% provide(:title, @user.name) %>
 <div class="row">
   <aside class="span4">
+    <div class="hero-unit">
     <section>
-      <h1>
+      <h3>
         <%= gravatar_for @user %>
         <%= @user.name %>
-      </h1>
+      </h3>
     </section>
+    </div>
+    <div class="profile hero-unit">
+    
+      
+      <h4>Gender: <%= @user.gender %> <br> </h4>
+      <h4>Interests: <%= @user.interests %> <br> </h4>
+      <h4>Quotes: <%= @user.quotes %> <br> </h4>
+      <h4>Hometown: <%= @user.hometown %> <br> <h4>
+
+    </div>
   </aside>
   <div class="span8">
     <% if (@user.microposts.any?)%>

@@ -12,6 +12,18 @@
     <%= form_for(@user) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
 
+      <%= f.label :gender %>
+      <%= f.text_field :gender %>
+
+      <%= f.label :quotes %>
+      <%= f.text_area :quotes, :cols => "30", :rows => "10" %>
+
+      <%= f.label :interests %>
+      <%= f.text_area :interests, :cols => "30", :rows => "10" %>
+
+      <%= f.label :hometown %>
+      <%= f.text_field :hometown %>
+
       <%= f.label :name %>
       <%= f.text_field :name %>
 

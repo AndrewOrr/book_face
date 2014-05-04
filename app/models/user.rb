@@ -1,7 +1,11 @@
 class User < ActiveRecord::Base
   has_many :microposts, dependent: :destroy
-  has_many :relationships, foreign_key: "follower_id", dependent: :destroy
+  has_many :relationships, foreign_key: "friender_id", dependent: :destroy
   has_many :friend_users, through: :relationships, source: :friend
+  has_many :reverse_relationships, foreign_key: "friended_id",
+                                   class_name:  "Relationship",
+                                   dependent:   :destroy
+  has_many :friends, through: :reverse_relationships, source: :follower
   before_save { self.email = email.downcase }
   before_create :create_remember_token
   validates :name, presence: true, length: { maximum: 50 }
