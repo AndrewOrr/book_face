@@ -19,7 +19,11 @@ describe User do
   it { should respond_to(:admin) }
   it { should respond_to(:microposts) }
   it { should respond_to(:feed) }
-
+  it { should respond_to(:relationships) }
+  it { should respond_to(:friend_users) }
+  it { should respond_to(:friend?) }
+  it { should respond_to(:friend!) }
+  it { should respond_to(:unfriend!) }
   it { should be_valid }
 
   describe "micropost associations" do
@@ -45,13 +49,13 @@ describe User do
     end
 
     describe "status" do
-      let(:unfollowed_post) do
+      let(:unfriend_post) do
         FactoryGirl.create(:micropost, user: FactoryGirl.create(:user))
       end
 
       its(:feed) { should include(newer_micropost) }
       its(:feed) { should include(older_micropost) }
-      its(:feed) { should_not include(unfollowed_post) }
+      its(:feed) { should_not include(unfriend_post) }
     end
   end
 
@@ -149,4 +153,22 @@ describe User do
     before { @user.save }
     its(:remember_token) { should_not be_blank }
   end
+  describe "friends" do
+    let(:other_user) { FactoryGirl.create(:user) }
+    before do
+      @user.save
+      @user.friend!(other_user)
+    end
+
+    it { should be_friending(other_user) }
+    its(:friend_users) { should include(other_user) }
+  end
+  describe "and unfriending" do
+      before { @user.unfriend!(other_user) }
+
+      it { should_not be_friend(other_user) }
+      its(:friend_users) { should_not include(other_user) }
+    end
+  end
+end
 end
