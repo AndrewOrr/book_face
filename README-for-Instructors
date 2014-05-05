@@ -1,8 +1,14 @@
-# README for Instructors
+README for Instructors
 
 For our project we did the default app, but implemented it as an app geared toward book lovers. The user is intended to
 sign up as a character and they would play that role on the site, posting and creating their profile as that character.
 This required a ton more HTML and CSS to create a book-like theme that the user would enjoy.
 
-
-Out of the basic functionality, we did not get the friend capability or the search function working. 
+Out of the basic functionality, we did not get the friend capability or the search function working. We attempted to use a
+few different gems/plugins for the friends functionality as well as trying to implement it on our own, but didn't have 
+success with either. We also had a ton of trouble with tests. We got the same errors with many of our tests: 
+"Capybara:ElementNotFound," and saying that "#has_link?" returned false when we definitely had a link present on the page. 
+We weren't able to figure out what was going on with this lack of recognition of elements that were obviously present. 
+Also, while the site looks great on localhost, there were a few elements that wouldn't function when we pushed to Heroku,
+such as the awesome font Jesse found to use for the first letters of headers, to add to the bookish feel of the site. The
+font worked perfectly well on local but refused to work on Heroku, even after precomiling assets.
