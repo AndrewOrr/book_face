@@ -26,7 +26,7 @@ show
 edit
 
 index
-### Controller
+### Controllers
 static_pages_controller
 
 users_controller
