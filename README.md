@@ -5,8 +5,21 @@
 ### Andrew Orr
 
 ## Description
-Book Face is a Book themed website with the same functionality that Facebook launched with
-in 2003.
+BookFace is a book-themed website with the same functionality that "TheFacebook" originally launched with in 2004.
 
-## Models Views and Controllers
-
+## Models, Views, and Controllers
+### Models
+micropost.rb
+relationship.rb
+user.rb
+### Views
+home
+new
+login
+show
+edit
+index
+### Controller
+static_pages_controller
+users_controller
+microposts_controller
