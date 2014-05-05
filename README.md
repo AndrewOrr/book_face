@@ -10,16 +10,25 @@ BookFace is a book-themed website with the same functionality that "TheFacebook"
 ## Models, Views, and Controllers
 ### Models
 micropost.rb
+
 relationship.rb
+
 user.rb
 ### Views
 home
+
 new
+
 login
+
 show
+
 edit
+
 index
 ### Controller
 static_pages_controller
+
 users_controller
+
 microposts_controller
