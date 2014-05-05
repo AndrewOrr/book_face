@@ -34,11 +34,13 @@ class User < ActiveRecord::Base
   end
 
   def friend!(other_user)
-    relationships.create!(friend_id: other_user.id)
+    relationships.create!(friend_id: other_user.id , accepted: true)
+    other_user.relationships.create!(friend_id: current_user.id, accepted: false)
   end
 
   def unfriend!(other_user)
     relationships.find_by(friend_id: other_user.id).destroy
+    other_user.relationships.find_by(friend_id: current_user.id).destroy
   end
 
 
