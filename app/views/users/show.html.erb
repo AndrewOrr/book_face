@@ -1,9 +1,12 @@
 <% provide(:title, @user.name) %>
 <div class="row">
   <aside class="span4">
-     <section>
-        <%= render 'shared/user_info' %>
-      </section>
+    <section>
+    <h3 class = "green-links">
+        <%= gravatar_for @user %>
+        <%= link_to @user.name, user_path %>
+    </h3>
+    </section>
     <div class="profile hero-unit"><h4>Gender:</h4> <p2><%= @user.gender %></p2>
       <h4>Interests:</h4> <p2><%= @user.interests %><p2> 
       <h4>Quotes:</h4> <p2><%= @user.quotes %><p2> 
@@ -12,10 +15,12 @@
   </aside>
   <div class="span8">
     <% if (@user.microposts.any?)%>
-      <section><h3>Spin us a Tale</h3></section>
-      <section>
-        <%= render 'shared/micropost_form' %>
-      </section>
+      <%if signed_in? && (current_user == @user)%>
+        <section><h3>Spin us a Tale</h3></section>
+        <section>
+          <%= render 'shared/micropost_form' %>
+        </section>
+      <% end %>
       <h3>Tales (<%= @user.microposts.count %>)</h3>
       <ol class= "microposts" >
         <%= render @microposts %>

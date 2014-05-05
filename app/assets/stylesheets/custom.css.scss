@@ -121,11 +121,12 @@ textarea {
   }
 }
 
-a:link {color: $darkGreen;}    /* unvisited link */
-a:visited {color: $darkGreen;} /* visited link */
-a:hover {color: $venomGreen;}   /* mouse over link */
-a:active {color: $darkGreen;}  /* selected link */
-
+.green-links{
+  a:link {color: $darkGreen;}    /* unvisited link */
+  a:visited {color: $darkGreen;} /* visited link */
+  a:hover {color: $venomGreen;}   /* mouse over link */
+  a:active {color: $darkGreen;}  /* selected link */
+}
 
 /* fonts */
 
