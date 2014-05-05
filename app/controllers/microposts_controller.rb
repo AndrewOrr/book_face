@@ -6,7 +6,12 @@ class MicropostsController < ApplicationController
     @micropost = current_user.microposts.build(micropost_params)
     if @micropost.save
       flash[:success] = "Your tale is saved"
-      redirect_to root_url
+      #redirect back to current page
+      if request.env['PATH_INFO'] == current_user
+        redirect_to current_user
+      else
+        redirect_to root_url
+      end
     else
       @feed_items = []
       render 'static_pages/home'
