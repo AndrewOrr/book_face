@@ -114,9 +114,11 @@ textarea {
 
 .profile{
   font-family:  "Book Antiqua", Palatino, serif;
-  p{ 
-    color: $darkGreen;
-    }
+  white-space: pre-line;
+  h4 {
+    padding-left: 22px ;
+    text-indent: -22px ; 
+  }
 }
 
 /* fonts */
